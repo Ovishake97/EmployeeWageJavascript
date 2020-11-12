@@ -16,6 +16,13 @@ function GetEmployeeWage(empCheck){
     }
 }
 let empCheck=Math.floor(Math.random()*10)%3;
-let empHours = GetEmployeeWage(empCheck)
-let dailyWage = empHours*WAGE_PER_HOUR;
-console.log("Wage per day is "+dailyWage);
+//UC4
+let NO_OF_WORKING_DAYS=20;
+let empHours=0;
+let dailyWage=0;
+for(let day=0;day<NO_OF_WORKING_DAYS;day++){
+    empHours = GetEmployeeWage(empCheck);
+    dailyWage += empHours*WAGE_PER_HOUR;
+
+}
+console.log("Total wage is "+dailyWage);
