@@ -15,14 +15,16 @@ function GetEmployeeWage(empCheck){
             return 0;
     }
 }
-let empCheck=Math.floor(Math.random()*10)%3;
-//UC4
-let NO_OF_WORKING_DAYS=20;
-let empHours=0;
-let dailyWage=0;
-for(let day=0;day<NO_OF_WORKING_DAYS;day++){
-    empHours = GetEmployeeWage(empCheck);
-    dailyWage += empHours*WAGE_PER_HOUR;
-
+//UC5
+const MAX_WORKING_HOURS=160;
+const MAX_WORKING_DAYS=20;
+let totalWorkingDays=0;
+let totalWorkingHours=0;
+let totalWage=0;
+while(totalWorkingDays<=MAX_WORKING_DAYS && totalWorkingHours<=MAX_WORKING_HOURS){
+    let empCheck=Math.floor(Math.random()*10)%3;
+    totalWorkingHours=GetEmployeeWage(empCheck);
+    totalWorkingDays++;
+    totalWage+=totalWorkingHours*WAGE_PER_HOUR;
 }
-console.log("Total wage is "+dailyWage);
+console.log("Total wage is "+totalWage);
